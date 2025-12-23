@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check your Amex Gift Card balance instantly and securely. Get 24/7 support for all your gift card needs with AmexGiftCard.com/Balance.">
+    <meta name="keywords" content="Amex Gift Card, Balance Check, Gift Card Balance, Secure Access">
+    <meta name="author" content="Amex Gift Card Balance">
+    <title>AmexGiftCard.com/Balance - Check Your Gift Card Balance Instantly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .custom-primary {
+            color: #5B4BFF;
+        }
+        
+        .custom-bg-primary {
+            background-color: #5B4BFF;
+        }
+        
+        .custom-bg-secondary {
+            background-color: #EEF0FF;
+        }
+        
+        .custom-accent {
+            color: #00E5A8;
+        }
+        
+        .custom-bg-accent {
+            background-color: #00E5A8;
+        }
+        
+        .btn-primary {
+            background-color: #5B4BFF;
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(91, 75, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #5B4BFF;
+            border: 2px solid #5B4BFF;
+            border-radius: 9999px;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5B4BFF;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease-out;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-item {
+            transition: all 0.3s ease-out;
+        }
+        
+        .benefit-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #E5E7EB;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1F2937;
+            user-select: none;
+            transition: all 0.3s ease-out;
+        }
+        
+        .faq-question:hover {
+            background-color: #F9FAFB;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease-out;
+            color: #5B4BFF;
+        }
+        
+        .faq-answer {
+            padding: 0 24px 24px 24px;
+            color: #6B7280;
+            line-height: 1.6;
+            transition: all 0.3s ease-out;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease-out;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .star {
+            color: #FBBF24;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease-out;
+        }
+        
+        .mobile-menu.hidden {
+            display: none;
+        }
+        
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #5B4BFF 0%, #00E5A8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #EEF0FF 0%, #F5F3FF 100%);
+        }
+        
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.7);
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header Navigation -->
+    <header class="header-sticky">
+        <nav class="max-w-7xl mx-auto px-8 md:px-16 py-6 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 custom-bg-primary rounded-full flex items-center justify-center">
+                    <i class="fas fa-gift text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold custom-primary">AmexCard</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-12">
+                <a href="#features" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Features</a>
+                <a href="#benefits" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Benefits</a>
+                <a href="#faq" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">FAQ</a>
+                <a href="#testimonials" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Testimonials</a>
+                <a href="#about" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">About</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden text-gray-700 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-8 py-6 flex flex-col gap-6">
+                <a href="#features" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Features</a>
+                <a href="#benefits" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Benefits</a>
+                <a href="#faq" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">FAQ</a>
+                <a href="#testimonials" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">Testimonials</a>
+                <a href="#about" class="text-gray-700 font-medium hover:custom-primary transition-colors duration-300">About</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-32 md:py-40 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-8">
+                        AmexGiftCard.com/Balance
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed font-medium">
+                        Amex Gift Card Balance Information
+                    </p>
+                    <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+                        Instantly check your Amex Gift Card balance with our secure, user-friendly platform. Access your account anytime, anywhere, and manage your gift card with complete peace of mind.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="https://www.clipsit.net/amexgiftcard-com-balance-activate-check-your-gift-card-b" class="btn-primary text-center">
+                            Check Your Balance Now
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <button class="btn-secondary text-center">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="hidden lg:flex justify-center items-center">
+                    <div class="relative w-80 h-80">
+                        <div class="absolute inset-0 custom-bg-primary rounded-3xl transform rotate-6 opacity-20"></div>
+                        <div class="absolute inset-0 custom-bg-accent rounded-3xl transform -rotate-6 opacity-20"></div>
+                        <div class="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 flex flex-col items-center justify-center gap-6 shadow-2xl">
+                            <div class="w-24 h-24 custom-bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-credit-card text-white text-5xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-600 text-sm font-medium mb-2">Your Gift Card Balance</p>
+                                <p class="text-4xl font-bold custom-primary">$1,250.00</p>
+                            </div>
+                            <div class="w-full h-1 custom-bg-accent rounded-full"></div>
+                            <p class="text-xs text-gray-500 text-center">Secure • Instant • Always Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    Powerful Features for Your Convenience
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our platform provides everything you need to manage your Amex Gift Card with ease and confidence.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 custom-bg-primary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Instant Balance Check</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get your Amex Gift Card balance in seconds. Our lightning-fast system processes your request instantly, giving you real-time information about your available funds without any delays or complications.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 custom-bg-primary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Secure Access</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Your financial information is protected with enterprise-grade encryption and security protocols. We employ the latest SSL technology and multi-layer security measures to ensure your data remains completely safe and confidential.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 custom-bg-primary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">24/7 Support</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our dedicated support team is available around the clock to assist you with any questions or concerns. Whether you need help checking your balance or have account inquiries, we're here to help whenever you need us.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 md:py-32 custom-bg-secondary">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    Why Choose Our Service
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the benefits of our streamlined gift card management platform.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Benefit 1 -->
+                <div class="benefit-item">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-12 h-12 custom-bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Check Balance Instantly</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                No more waiting or guessing. Get your exact Amex Gift Card balance in real-time with just a few clicks. Our instant verification system ensures you always know exactly how much you have available to spend.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="benefit-item">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-12 h-12 custom-bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Always Secure</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Your privacy and security are our top priorities. We use industry-leading encryption standards and comply with all financial security regulations to protect your personal and financial information at all times.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="benefit-item">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-12 h-12 custom-bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Help Anytime</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Our responsive customer support team is ready to assist you whenever you need help. From balance inquiries to account troubleshooting, we provide prompt, professional support 24 hours a day, 7 days a week.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20 md:py-32 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop');">
+        <div class="cta-overlay"></div>
+        <div class="cta-content max-w-7xl mx-auto px-8 md:px-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Ready to Check Your Balance?
+            </h2>
+            <p class="text-xl text-gray-100 mb-12 max-w-2xl mx-auto">
+                Access your Amex Gift Card balance securely and instantly. Join thousands of satisfied users who trust our platform for their gift card management needs.
+            </p>
+            <a href="https://www.clipsit.net/amexgiftcard-com-balance-activate-check-your-gift-card-b" class="btn-primary inline-block">
+                Get Started Now
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Find answers to common questions about our Amex Gift Card balance service.
+                </p>
+            </div>
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I check my Amex Gift Card balance?</span>
+                    <svg class="faq-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer hidden">
+                    <p>Checking your Amex Gift Card balance is simple and straightforward. Visit our website, enter your card details securely, and your balance will be displayed instantly. The process takes less than a minute, and you can check your balance as many times as you need. Our system is available 24/7 for your convenience.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my information safe when checking my balance?</span>
+                    <svg class="faq-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer hidden">
+                    <p>Absolutely. We prioritize your security with enterprise-grade encryption and SSL technology. Your personal and financial information is protected with the same security standards used by major financial institutions. We never store your complete card details and comply with all PCI DSS security requirements. Your privacy is our top concern.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What should I do if I forget my card details?</span>
+                    <svg class="faq-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer hidden">
+                    <p>If you've forgotten your card details, don't worry. You can contact our 24/7 customer support team for assistance. They can help you verify your identity and retrieve the information you need to check your balance. Alternatively, if you have your original gift card, you can locate the card number on the front of the card.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How often can I check my balance?</span>
+                    <svg class="faq-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer hidden">
+                    <p>You can check your balance as many times as you want, whenever you want. There are no limits or restrictions on balance inquiries. Our system is designed to handle multiple checks per day without any impact on your account. Check your balance before shopping, after making a purchase, or anytime you need to verify your available funds.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I encounter an error when checking my balance?</span>
+                    <svg class="faq-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer hidden">
+                    <p>If you experience any errors, our support team is ready to help. First, try refreshing the page and entering your information again. If the problem persists, contact our customer support team immediately. They can troubleshoot the issue, verify your account details, and ensure you can access your balance information quickly and securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-32 custom-bg-secondary">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+                    What Our Users Say
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join thousands of satisfied customers who trust us with their Amex Gift Card balance inquiries.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "This service is incredible! I can check my gift card balance in seconds. The interface is so user-friendly, and I love that it's available 24/7. Highly recommended!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                        <p class="text-sm text-gray-600">Marketing Manager</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "I was skeptical at first, but the security measures are top-notch. My information feels completely safe, and the balance updates are instant. Great service!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">James Rodriguez</p>
+                        <p class="text-sm text-gray-600">Small Business Owner</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "The customer support team went above and beyond when I had questions. They responded quickly and resolved my issue immediately. Exceptional service!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Emily Chen</p>
+                        <p class="text-sm text-gray-600">Corporate Executive</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Finally, a reliable way to check my gift card balance! No more calling customer service or visiting multiple websites. This platform is a game-changer for managing my cards."
+                    </p>
+                    <div>
+                        <p class="font-bold text-gray-900">Michael Thompson</p>
+                        <p class="text-sm text-gray-600">Retail Professional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-8 md:px-16">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-12 text-center">
+                About AmexGiftCard.com/Balance
+            </h2>
+            
+            <div class="space-y-8">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    AmexGiftCard.com/Balance was founded with a simple mission: to make checking your Amex Gift Card balance as easy and convenient as possible. We recognized that customers needed a fast, secure, and reliable way to access their account information without the hassle of phone calls or complex procedures. Our platform was built from the ground up with user experience in mind, combining cutting-edge technology with intuitive design to create a seamless service that puts your needs first. Since our launch, we've served thousands of satisfied customers who rely on us for their daily gift card management needs.
+                </p>
+                
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    At the heart of our company is a commitment to security, transparency, and customer excellence. We believe that managing your Amex Gift Card should be simple, safe, and stress-free. Our dedicated team works tirelessly to maintain the highest standards of data protection, compliance, and customer service. We invest continuously in our infrastructure and technology to ensure that you always have access to the most reliable, secure, and user-friendly balance checking service available. Our core values of integrity, innovation, and customer-centricity guide every decision we make, ensuring that your experience with us exceeds your expectations every single time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Column 1: Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 custom-bg-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-gift text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold">AmexCard</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your trusted platform for instant Amex Gift Card balance checking.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#features" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Features
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#benefits" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Benefits
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Testimonials
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Support -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Help Center
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Status Page
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:custom-accent transition-colors duration-300">
+                                Documentation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact</h4>
+                    <p class="text-gray-400 mb-4">
+                        <span class="block font-medium">Email</span>
+                        <a href="mailto:amexgiftcardbalance@gmail.com" class="hover:custom-accent transition-colors duration-300">
+                            amexgiftcardbalance@gmail.com
+                        </a>
+                    </p>
+                    <p class="text-gray-400">
+                        <span class="block font-medium mb-2">Availability</span>
+                        24/7 Customer Support
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 AmexGiftCard.com/Balance. All rights reserved.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Secure • Trusted • Available 24/7
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
